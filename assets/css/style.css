@@ -4,9 +4,10 @@
 /* General */
 body {
   font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
+  font-size: 0.85rem;
   line-height: 1.42857143;
   color: #333;
+  background-color: #000000;
 }
 
 * {
@@ -47,7 +48,7 @@ a:focus {
   width: 100%;
   height: 34px;
   padding: 6px 12px;
-  font-size: 14px;
+  font-size: 0.85rem;
   outline: none;
   font-family: 'Open Sans', sans-serif;
 }
@@ -132,7 +133,7 @@ mybot .chatCont {
   position: fixed;
   width: 400px;
   height: 400px !important;
-  border: 1px solid #dcdcdc;
+  /* border: 1px solid #dcdcdc; */
   bottom: 65px;
   right: 0;
   /* background: #efe7dd url("http://madketing.com.ar/chat/assets/img/bg.jpg"); */
@@ -188,11 +189,12 @@ mybot .bot-txt:focus {
 }
 
 mybot .resultDiv .botResult {
-  background: #FF995F;
+  /* background: #FF995F; */
+  background-image: linear-gradient(to right,#ff8328, #ea5400 );
   color: #ffffff;
   border-radius: 30px;
   padding: 12px;
-  font-size: 14px;
+  font-size: 0.85rem;
   font-weight: 400;
   box-shadow: 0 0px 1px 0 rgba(0,0,0,0.16),0 0px 10px 0 rgba(0,0,0,0.12);
   border-top-left-radius: 0;
@@ -224,7 +226,7 @@ mybot .resultDiv .userEnteredText {
   color: #000;
   border-radius: 30px;
   padding: 12px;
-  font-size: 15px;
+  font-size: 0.85rem;
   font-weight: 400;
   box-shadow: 0 0px 1px 0 rgba(0,0,0,0.16),0 0px 10px 0 rgba(0,0,0,0.12);
   border-top-right-radius: 0;
@@ -278,7 +280,8 @@ mybot .chat-txt {
 
 /* Spinner start */
 mybot .spinner {
-  background: #FF995F;
+  /* background: #FF995F; */
+  background-image: linear-gradient(to right,#ff8328, #ea5400 );
   width: 70px;
   height: 40px;
   text-align: center;
@@ -298,7 +301,7 @@ mybot .spinner:before {
   height: 0;
   border-top: 0px solid rgba(0, 0, 0, 0);
   border-bottom: 15px solid rgba(0, 0, 0, 0);
-  border-right: 15px solid #FF995F;
+  border-right: 15px solid #ff8328;
   left: -15px;
   margin-top: -7px;
 }
@@ -344,8 +347,39 @@ mybot .spinner .bounce2 {
   padding: 35px 20px 30px 20px;
   overflow-y: auto;
   height: 100%;
-  border-top: 4px solid #878787;
-  box-shadow: 2px 2px 20px 4px;
+  /* border-top: 4px solid #878787; */
+  /* box-shadow: 2px 2px 20px 4px; */
+}
+
+#header {
+  /* background-color: #FF995F; */
+  background-image: linear-gradient(to right,#ff8328, #ea5400 );
+  color: #fff;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#header p {
+  margin: 0 1rem;
+}
+
+#headerName {
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding-top: 0.4rem;
+  padding-bottom: 0;
+}
+
+#headerStatus {
+font-size: 0.85rem;
+padding-top:0;
+padding-bottom: 0.4rem;
+}
+
+#closeChat {
+  font-size: 1.5rem;
+  margin: 0 1rem;
 }
 
 
