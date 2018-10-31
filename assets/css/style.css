@@ -135,8 +135,9 @@ mybot .chatCont {
   border: 1px solid #dcdcdc;
   bottom: 65px;
   right: 0;
-  background: #efe7dd url("http://madketing.com.ar/chat/assets/img/bg.jpg");
+  /* background: #efe7dd url("http://madketing.com.ar/chat/assets/img/bg.jpg"); */
   border-top-left-radius: 3px;
+  background-color: #EBEBEB;
   z-index: 10000;
   display: none;
 }
@@ -187,23 +188,22 @@ mybot .bot-txt:focus {
 }
 
 mybot .resultDiv .botResult {
-  background: #fff;
-  color: #000;
-  border-radius: 3px;
+  background: #FF995F;
+  color: #ffffff;
+  border-radius: 30px;
   padding: 12px;
   font-size: 14px;
   font-weight: 400;
-  width: 400px;
-  float: left;
   box-shadow: 0 0px 1px 0 rgba(0,0,0,0.16),0 0px 10px 0 rgba(0,0,0,0.12);
   border-top-left-radius: 0;
   margin-bottom: 10px;
   margin-top: 5px;
-  width: 100%;
   position: relative;
+  display: inline-block;
+  max-width: 100%;
 }
 
-mybot .resultDiv .botResult:before {
+/* mybot .resultDiv .botResult:before {
   content: "";
   position: absolute;
   width: 0;
@@ -213,28 +213,31 @@ mybot .resultDiv .botResult:before {
   border-right: 15px solid #fff;
   left: -15px;
   margin-top: -12px;
+} */
+
+mybot .resultDiv .scope-user {
+  text-align: right;
 }
 
 mybot .resultDiv .userEnteredText {
-  background: #FF995F;
-  float: right;
-  color: #ffffff;
-  border-radius: 3px;
+  background: #fff;
+  color: #000;
+  border-radius: 30px;
   padding: 12px;
   font-size: 15px;
   font-weight: 400;
-  width: 400px;
   box-shadow: 0 0px 1px 0 rgba(0,0,0,0.16),0 0px 10px 0 rgba(0,0,0,0.12);
   border-top-right-radius: 0;
   position: relative;
   left: -6px;
   margin-bottom: 10px;
   margin-top: 5px;
-  width: 100%;
   word-wrap: break-word;
+  display: inline-block;
+  max-width: 100%;
 }
 
-mybot .resultDiv .userEnteredText:before {
+/* mybot .resultDiv .userEnteredText:before {
   content: "";
   width: 0;
   height: 0;
@@ -244,7 +247,7 @@ mybot .resultDiv .userEnteredText:before {
   position: absolute;
   right: -15px;
   margin-top: -12px;
-}
+} */
 
 mybot .profile_div {
   position: fixed;

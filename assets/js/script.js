@@ -36,7 +36,7 @@ $(document).ready(function() {
 								'</div><!--row end-->'+
 							'</div><!--profile_div end-->';
 
-	$("mybot").html(mybot);
+	// $("mybot").html(mybot);
 
 	// ------------------------------------------ Toggle chatbot -----------------------------------------------
 	$('.profile_div').click(function() {
@@ -182,11 +182,11 @@ $(document).ready(function() {
 		setTimeout(function(){
 			if($.trim(val) == '') {
 				val = 'I couldn\'t get that. Let\' try something else!'
-				var BotResponse = '<p class="botResult">'+val+'</p><div class="clearfix"></div>';
+				var BotResponse = '<div class="scope-bot"><p class="botResult">'+val+'</p></div><div class="clearfix"></div>';
 				$(BotResponse).appendTo('#result_div');	// Suggestions end -----------------------------------------------------------------------------------------
 			} else {
 				val = val.replace(new RegExp('\r?\n','g'), '<br />');
-				var BotResponse = '<p class="botResult">'+val+'</p><div class="clearfix"></div>';
+				var BotResponse = '<div class="scope-bot"><p class="botResult">'+val+'</p></div><div class="clearfix"></div>';
 				$(BotResponse).appendTo('#result_div');
 			}
 			scrollToBottomOfResults();
@@ -197,7 +197,7 @@ $(document).ready(function() {
 
 	//------------------------------------- Set user response in result_div ------------------------------------
 	function setUserResponse(val) {
-		var UserResponse = '<p class="userEnteredText">'+val+'</p><div class="clearfix"></div>';
+		var UserResponse = '<div class="scope-user"><p class="userEnteredText">'+val+'</p></div><div class="clearfix"></div>';
 		$(UserResponse).appendTo('#result_div');
 		$("#chat-input").val('');
 		scrollToBottomOfResults();
