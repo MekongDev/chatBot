@@ -4,11 +4,14 @@ $(document).ready(function() {
 	var baseUrl = "https://api.dialogflow.com/v1/";
 	var accessToken = "43495d56f78a40d1b4d78ae90beee206";
 
+	//domain
+	const domain = './assets/' //http://madketing.com.ar/chat/assets/
+
 	//---------------------------------- Add dynamic html bot content(Widget style) ----------------------------
 	// You can also add the html content in html page and still it will work!
 	var mybot = '<div class="chatCont" id="chatCont">'+
 								'<div class="bot_profile">'+
-									'<img src="http://madketing.com.ar/chat/assets/img/logo2.png" class="bot_p_img">'+
+									'<img src="'+domain+'img/logo2.png" class="bot_p_img">'+
 									'<div class="close" style="width: 22px; height: 22px;">'+
 										'<i class="fa fa-times" aria-hidden="true" style="color: #000000;"></i>'+
 									'</div>'+
@@ -21,14 +24,14 @@ $(document).ready(function() {
 										'<div class="bounce3"></div>'+
 									'</div>'+
 									'<input type="text" id="chat-input" autocomplete="off" placeholder="Escribe tu pregunta.."'+ 'class="form-control bot-txt"/>'+
-									'<button type="submit" id="send-button" class="sendButton"><img src="http://madketing.com.ar/chat/assets/img/send-button.png"/></button>'+
+									'<button type="submit" id="send-button" class="sendButton"><img src="'+domain+'img/send-button.png"/></button>'+
 								'</div>'+
 							'</div><!--chatCont end-->'+
 
 							'<div class="profile_div">'+
 								'<div class="row" style="width: 80px;">'+
 									'<div class="col-hgt">'+
-										'<img src="http://madketing.com.ar/chat/assets/img/logo.png" class="img-circle img-profile">'+
+										'<img src="'+domain+'/img/logo.png" class="img-circle img-profile">'+
 									'</div><!--col-hgt end-->'+
 								'</div><!--row end-->'+
 							'</div><!--profile_div end-->';
