@@ -47,7 +47,7 @@ $(document).ready(function() {
 		document.getElementById('chat-input').focus();
 	});
 
-	$('.close').click(function() {
+	$('#closeChat').click(function() {
 		$('.profile_div').toggle();
 		$('.chatCont').toggle();
 		$('.bot_profile').toggle();
