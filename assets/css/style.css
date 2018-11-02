@@ -109,11 +109,23 @@ a:focus {
 }
 
 .sendButton {
-  background-color: transparent !important;
-  position: relative;
+  background-color: #1592ea !important;
+  /* position: relative; */
+  display: inline-flex;
   bottom: 4em;
   left: 25.25em;
   border: 0;
+  cursor: pointer;
+  border-radius: 25px;
+  width: 4rem;
+  margin: 7px;
+  border-top:1px solid #dcdcdc;
+}
+
+.img-conf{
+  width: 30px;
+  height: 30px;
+  margin:5px;
 }
 
 /* MyBot */
@@ -131,8 +143,8 @@ mybot.left .profile_div {
 
 mybot .chatCont {
   position: fixed;
-  width: 400px;
-  height: 400px !important;
+  width: 320px;
+  height: 70% !important;
   /* border: 1px solid #dcdcdc; */
   bottom: 65px;
   right: 0;
@@ -170,11 +182,14 @@ mybot .bot_p_img {
 }
 
 mybot .chatForm {
+  display: flex !important;
+  border-top: 1px solid #dcdcdc;
+  background-color: white;
   position: absolute;
   bottom: -65px;
 	right: 0;
 	margin-bottom: 0;
-	width: 400px;
+	width: 320px;
   display: none;
 }
 
@@ -184,7 +199,6 @@ mybot .bot-txt:focus {
   border-radius: 0;
   height: 66px;
   border: 0;
-  border-top: 1px solid #dcdcdc;
   border-left: 1px solid #dcdcdc;
 }
 
@@ -298,7 +312,7 @@ mybot .chat-txt {
 mybot .spinner {
   background-image: linear-gradient(to right,#ff8328, #ea5400 );
   width: 70px;
-  height: 40px;
+  height: 35px;
   text-align: center;
   display: none;
   border-radius: 30px;
@@ -333,21 +347,24 @@ mybot .spinner > div {
 mybot .bounce1 {
   margin-right:3px;
   background:#303131;
-  animation: wave 0.5s linear infinite;
+  /* animation: wave 0.5s linear infinite; */
+  animation: wave 0.7s cubic-bezier(0.6, -0.28, 0.74, 0.05) infinite;
 }
 
 mybot .bounce2 {
   margin-right:3px;
   background:#303131;
-  animation: wave 0.5s linear infinite;
-  animation-delay: -0.4s;
+  /* animation: wave 0.5s linear infinite; */
+  animation: wave 0.7s cubic-bezier(0.6, -0.28, 0.74, 0.05) infinite;
+  animation-delay: 0.1s;
 }
 
 mybot .bounce3 {
   margin-right:3px;
   background:#303131;
-  animation: wave 0.5s linear infinite;
-  animation-delay: -0.3s;
+  /* animation: wave 0.5s linear infinite; */
+  animation: wave 0.7s cubic-bezier(0.6, -0.28, 0.74, 0.05) infinite;
+  animation-delay: 0.2s;
 }
 
 /* Spinner End */
@@ -355,7 +372,7 @@ mybot .bounce3 {
 .resultDiv {
   padding: 35px 20px 30px 20px;
   overflow-y: auto;
-  height: 100%;
+  height: 89%;
   /* border-top: 4px solid #878787; */
   /* box-shadow: 2px 2px 20px 4px; */
 }

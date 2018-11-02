@@ -201,6 +201,7 @@ $(document).ready(function() {
 		$(UserResponse).appendTo('#result_div');
 		$("#chat-input").val('');
 		scrollToBottomOfResults();
+		$(".spinner").appendTo("#result_div");
 		showSpinner();
 		$('.suggestion').remove();
 	}
