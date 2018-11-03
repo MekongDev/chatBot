@@ -111,21 +111,21 @@ a:focus {
 .sendButton {
   background-color: #1592ea !important;
   /* position: relative; */
-  display: inline-flex;
-  bottom: 4em;
-  left: 25.25em;
-  border: 0;
+  /* display: inline-flex; */
+  /* bottom: 4em; */
+  /* left: 25.25em; */
+  border: none;
   cursor: pointer;
-  border-radius: 25px;
-  width: 4rem;
-  margin: 7px;
+  border-radius: 50%;
+  /* width: 4rem; */
+  margin: 0.5rem;
   border-top:1px solid #dcdcdc;
 }
 
 .img-conf{
-  width: 30px;
-  height: 30px;
-  margin:5px;
+  width: 1.8rem;
+  height: auto;
+  margin: 0 0.3rem;
 }
 
 /* MyBot */
