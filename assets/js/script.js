@@ -41,7 +41,7 @@ $(document).ready(function() {
 	// ------------------------------------------ Toggle chatbot -----------------------------------------------
 	$('.profile_div').click(function() {
 		$('.profile_div').toggle();
-		$('.chatCont').toggle();
+		$('.chatCont').toggle('fast');
 		$('.bot_profile').toggle();
 		$('.chatForm').toggle();
 		document.getElementById('chat-input').focus();
@@ -49,7 +49,7 @@ $(document).ready(function() {
 
 	$('#closeChat').click(function() {
 		$('.profile_div').toggle();
-		$('.chatCont').toggle();
+		$('.chatCont').toggle('fast');
 		$('.bot_profile').toggle();
 		$('.chatForm').toggle();
 	});
@@ -191,6 +191,7 @@ $(document).ready(function() {
 			}
 			scrollToBottomOfResults();
 			hideSpinner();
+			document.getElementById('chat-input').focus();
 		}, 500);
 	}
 
