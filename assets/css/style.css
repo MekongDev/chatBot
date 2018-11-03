@@ -428,7 +428,7 @@ padding-bottom: 0.4rem;
     width: 100%;
   }
   mybot .chatCont {
-    height: 70% !important;
+    height: 100% !important;
   }
 }
 /* MyBot end */
