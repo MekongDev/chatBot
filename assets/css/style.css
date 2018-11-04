@@ -128,6 +128,19 @@ a:focus {
   margin: 0 0.3rem;
 }
 
+.img-conf-logo{
+  width: 1.8rem;
+  height: auto;
+  margin: 0 0.3rem;
+  vertical-align: middle;
+}
+
+.developed-text{
+  text-align: center;
+  font-size: 0.7rem;
+  color: #aaa;
+}
+
 /* MyBot */
 mybot.center .chatCont,
 mybot.center .profile_div {
@@ -417,12 +430,12 @@ padding-bottom: 0.4rem;
 
 
 @media screen and (max-width: 500px) {
-  mybot .resultDiv .userEnteredText,
+  /* mybot .resultDiv .userEnteredText,
   mybot .resultDiv .botResult,
   mybot .suggestion {
     width: 90%;
     margin-bottom: 20px;
-  }
+  } */
   mybot .chatCont,
   mybot .chatForm {
     width: 100%;
