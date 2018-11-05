@@ -44,15 +44,23 @@ $(document).ready(function() {
 		$('.chatCont').toggle('fast');
 		$('.bot_profile').toggle();
 		$('.chatForm').toggle();
+		history.pushState({ state: 'open chat clicked' }, 'chat', '#' );
 		document.getElementById('chat-input').focus();
 	});
 
-	$('#closeChat').click(function() {
+	$('#closeChat').click(closeChat);
+
+	function closeChat(){
 		$('.profile_div').toggle();
 		$('.chatCont').toggle('fast');
 		$('.bot_profile').toggle();
-		$('.chatForm').toggle();
-	});
+		$('.chatForm').toggle();		
+	}
+
+	window.onpopstate = function (event) {
+		event.preventDefault();
+		closeChat();
+	}
 
 
 	// Session Init (is important so that each user interaction is unique)--------------------------------------
@@ -189,9 +197,9 @@ $(document).ready(function() {
 				var BotResponse = '<div class="scope-bot"><p class="botResult">'+val+'</p></div><div class="clearfix"></div>';
 				$(BotResponse).appendTo('#result_div');
 			}
-			scrollToBottomOfResults();
 			hideSpinner();
 			document.getElementById('chat-input').focus();
+			scrollToBottomOfResults();
 		}, 500);
 	}
 
