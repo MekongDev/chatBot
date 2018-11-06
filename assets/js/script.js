@@ -39,44 +39,24 @@ $(document).ready(function() {
 	// $("mybot").html(mybot);
 
 	// ------------------------------------------ Toggle chatbot -----------------------------------------------
-	$('.profile_div').click(function() {
-		$('.profile_div').toggle();
-		$('.chatCont').toggle('fast');
-		$('.bot_profile').toggle();
-		$('.chatForm').toggle();
-		history.pushState({ state: 'open chat clicked' }, 'chat', '#' );
-		document.getElementById('chat-input').focus();
-	});
+	$('.profile_div').click(openChat);
 
-	$('.pop-up-content-title').click(function() {
-		$('.profile_div').toggle();
-		$('.chatCont').toggle('fast');
-		$('.bot_profile').toggle();
-		$('.chatForm').toggle();
-		history.pushState({ state: 'open chat clicked' }, 'chat', '#' );
-		document.getElementById('chat-input').focus();
-	});
+	$('.pop-up-content-title').click(openChat);
 
-	$('.pop-up-text-container').click(function() {
-		$('.profile_div').toggle();
-		$('.chatCont').toggle('fast');
-		$('.bot_profile').toggle();
-		$('.chatForm').toggle();
-		history.pushState({ state: 'open chat clicked' }, 'chat', '#' );
-		document.getElementById('chat-input').focus();
-	});
+	$('.pop-up-text-container').click(openChat);
 
-	$('.fake-input-container').click(function() {
-		$('.profile_div').toggle();
-		$('.chatCont').toggle('fast');
-		$('.bot_profile').toggle();
-		$('.chatForm').toggle();
-		history.pushState({ state: 'open chat clicked' }, 'chat', '#' );
-		document.getElementById('chat-input').focus();
-	});
+	$('.fake-input-container').click(openChat);
 
 	$('#closeChat').click(closeChat);
 
+	function openChat(){
+		$('.profile_div').toggle();
+		$('.chatCont').toggle('fast');
+		$('.bot_profile').toggle();
+		$('.chatForm').toggle();
+		history.pushState({ state: 'open chat clicked' }, 'chat', '#' );
+		if (window.innerWidth>600) document.getElementById('chat-input').focus();
+	}
 
 	function closeChat(){
 		$('.profile_div').toggle();
