@@ -47,12 +47,45 @@ $(document).ready(function() {
 		document.getElementById('chat-input').focus();
 	});
 
+	$('.pop-up-content-title').click(function() {
+		$('.profile_div').toggle();
+		$('.chatCont').toggle('fast');
+		$('.bot_profile').toggle();
+		$('.chatForm').toggle();
+		document.getElementById('chat-input').focus();
+	});
+
+	$('.pop-up-text-container').click(function() {
+		$('.profile_div').toggle();
+		$('.chatCont').toggle('fast');
+		$('.bot_profile').toggle();
+		$('.chatForm').toggle();
+		document.getElementById('chat-input').focus();
+	});
+
+	$('.fake-input-container').click(function() {
+		$('.profile_div').toggle();
+		$('.chatCont').toggle('fast');
+		$('.bot_profile').toggle();
+		$('.chatForm').toggle();
+		document.getElementById('chat-input').focus();
+	});
+
 	$('#closeChat').click(function() {
 		$('.profile_div').toggle();
 		$('.chatCont').toggle('fast');
 		$('.bot_profile').toggle();
 		$('.chatForm').toggle();
+		$('.pop-up-container:visible').hide();
 	});
+
+	$('.pop-up-text-closer').click(function(){
+		$('.pop-up-container').toggle();
+	})
+
+	setTimeout(() => {
+		$('.pop-up-container').slideToggle(150);
+	}, 2000);
 
 
 	// Session Init (is important so that each user interaction is unique)--------------------------------------
