@@ -1,8 +1,11 @@
 $(document).ready(function() {
 
 	// Credentials
-	var baseUrl = "https://api.dialogflow.com/v1/";
-	var accessToken = "43495d56f78a40d1b4d78ae90beee206";
+	const baseUrl = "https://api.dialogflow.com/v1/";
+	const tokens ={
+		standard: "43495d56f78a40d1b4d78ae90beee206"
+	}
+	let accessToken = tokens[$('mybot').data().apikey];
 
 	//domain
 	const domain = './assets/' //http://madketing.com.ar/chat/assets/
@@ -81,7 +84,7 @@ $(document).ready(function() {
 
 
 	// Session Init (is important so that each user interaction is unique)--------------------------------------
-	var session = function() {
+	function session () {
 		// Retrieve the object from storage
 		if(sessionStorage.getItem('session')) {
 			var retrievedSession = sessionStorage.getItem('session');
@@ -112,7 +115,7 @@ $(document).ready(function() {
 	}
 
 	// Call Session init
-	var mysession = session();
+	let mysession = session();
 
 
 	// on input/text enter--------------------------------------------------------------------------------------
@@ -158,7 +161,7 @@ $(document).ready(function() {
 			headers: {
 				"Authorization": "Bearer " + accessToken
 			},
-			data: JSON.stringify({ query: text, lang: "en", sessionId: "somerandomthing" }),
+			data: JSON.stringify({ query: text, lang: "en", sessionId: mysession }),
 			success: function(data) {
 				main(data);
 				console.log(data);
