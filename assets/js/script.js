@@ -198,8 +198,8 @@ $(document).ready(function() {
 				$(BotResponse).appendTo('#result_div');
 			}
 			hideSpinner();
-			document.getElementById('chat-input').focus();
 			scrollToBottomOfResults();
+			if (window.innerWidth>600) document.getElementById('chat-input').focus();
 		}, 500);
 	}
 
