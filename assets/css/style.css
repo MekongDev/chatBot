@@ -364,6 +364,7 @@ mybot .popup-fake-input{
   pointer-events: none;
   width: 100%;
   border: none;
+  -webkit-appearance: none;
 }
 
 ::placeholder{
