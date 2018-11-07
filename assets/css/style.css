@@ -129,10 +129,13 @@ a:focus {
 }
 
 .img-conf-logo{
-  width: 1.8rem;
+  width: auto;
   height: auto;
+  max-width: 2.4rem;
+  max-height: 2.3rem;
   margin: 0 0.3rem;
   vertical-align: middle;
+  margin: 0
 }
 
 .developed-text{
