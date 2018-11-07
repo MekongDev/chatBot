@@ -1,8 +1,11 @@
 $(document).ready(function() {
 
 	// Credentials
-	var baseUrl = "https://api.dialogflow.com/v1/";
-	var accessToken = "43495d56f78a40d1b4d78ae90beee206";
+	const baseUrl = "https://api.dialogflow.com/v1/";
+	const tokens ={
+		standard: "43495d56f78a40d1b4d78ae90beee206"
+	}
+	let accessToken = tokens[$('mybot').data().apikey];
 
 	//domain
 	const domain = './assets/' //http://madketing.com.ar/chat/assets/
@@ -39,44 +42,24 @@ $(document).ready(function() {
 	// $("mybot").html(mybot);
 
 	// ------------------------------------------ Toggle chatbot -----------------------------------------------
-	$('.profile_div').click(function() {
-		$('.profile_div').toggle();
-		$('.chatCont').toggle('fast');
-		$('.bot_profile').toggle();
-		$('.chatForm').toggle();
-		history.pushState({ state: 'open chat clicked' }, 'chat', '#' );
-		document.getElementById('chat-input').focus();
-	});
+	$('.profile_div').click(openChat);
 
-	$('.pop-up-content-title').click(function() {
-		$('.profile_div').toggle();
-		$('.chatCont').toggle('fast');
-		$('.bot_profile').toggle();
-		$('.chatForm').toggle();
-		history.pushState({ state: 'open chat clicked' }, 'chat', '#' );
-		document.getElementById('chat-input').focus();
-	});
+	$('.pop-up-content-title').click(openChat);
 
-	$('.pop-up-text-container').click(function() {
-		$('.profile_div').toggle();
-		$('.chatCont').toggle('fast');
-		$('.bot_profile').toggle();
-		$('.chatForm').toggle();
-		history.pushState({ state: 'open chat clicked' }, 'chat', '#' );
-		document.getElementById('chat-input').focus();
-	});
+	$('.pop-up-text-container').click(openChat);
 
-	$('.fake-input-container').click(function() {
-		$('.profile_div').toggle();
-		$('.chatCont').toggle('fast');
-		$('.bot_profile').toggle();
-		$('.chatForm').toggle();
-		history.pushState({ state: 'open chat clicked' }, 'chat', '#' );
-		document.getElementById('chat-input').focus();
-	});
+	$('.fake-input-container').click(openChat);
 
 	$('#closeChat').click(closeChat);
 
+	function openChat(){
+		$('.profile_div').toggle();
+		$('.chatCont').toggle('fast');
+		$('.bot_profile').toggle();
+		$('.chatForm').toggle();
+		history.pushState({ state: 'open chat clicked' }, 'chat', '#' );
+		if (window.innerWidth>600) document.getElementById('chat-input').focus();
+	}
 
 	function closeChat(){
 		$('.profile_div').toggle();
@@ -101,7 +84,7 @@ $(document).ready(function() {
 
 
 	// Session Init (is important so that each user interaction is unique)--------------------------------------
-	var session = function() {
+	function session () {
 		// Retrieve the object from storage
 		if(sessionStorage.getItem('session')) {
 			var retrievedSession = sessionStorage.getItem('session');
@@ -132,7 +115,7 @@ $(document).ready(function() {
 	}
 
 	// Call Session init
-	var mysession = session();
+	let mysession = session();
 
 
 	// on input/text enter--------------------------------------------------------------------------------------
@@ -178,7 +161,7 @@ $(document).ready(function() {
 			headers: {
 				"Authorization": "Bearer " + accessToken
 			},
-			data: JSON.stringify({ query: text, lang: "en", sessionId: "somerandomthing" }),
+			data: JSON.stringify({ query: text, lang: "en", sessionId: mysession }),
 			success: function(data) {
 				main(data);
 				console.log(data);
@@ -235,8 +218,8 @@ $(document).ready(function() {
 				$(BotResponse).appendTo('#result_div');
 			}
 			hideSpinner();
-			document.getElementById('chat-input').focus();
 			scrollToBottomOfResults();
+			if (window.innerWidth>600) document.getElementById('chat-input').focus();
 		}, 500);
 	}
 
