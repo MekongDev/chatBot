@@ -5,7 +5,8 @@ $(document).ready(function() {
 	const tokens ={
 		standard: "43495d56f78a40d1b4d78ae90beee206"
 	}
-	let accessToken = tokens[$('mybot').data().apikey];
+	let accessToken = tokens[$('script[data-id="bot"]').data().apikey] || '43495d56f78a40d1b4d78ae90beee206';
+	// let accessToken = $('script[data-id="bot"]').data().apikey || '43495d56f78a40d1b4d78ae90beee206'
 
 	//domain
 	const domain = './assets/' //http://madketing.com.ar/chat/assets/
@@ -164,7 +165,6 @@ $(document).ready(function() {
 			data: JSON.stringify({ query: text, lang: "en", sessionId: mysession }),
 			success: function(data) {
 				main(data);
-				console.log(data);
 			},
 			error: function(e) {
 				console.log (e);
