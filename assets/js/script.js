@@ -11,6 +11,7 @@ $(document).ready(function() {
 	//domain
 	const domain = './assets/' //http://madketing.com.ar/chat/assets/
 
+
 	//---------------------------------- Add dynamic html bot content(Widget style) ----------------------------
 	// You can also add the html content in html page and still it will work!
 	var mybot = '<div class="chatCont" id="chatCont">'+

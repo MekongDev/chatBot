@@ -377,21 +377,31 @@ mybot .popup-fake-input{
 mybot .profile_div {
   position: fixed;
   bottom: 0;
-  right: 10px;
-  width: 65px;
+  right: 0;
+  width: 94px;
   cursor: pointer;
+  height: 86px;
 }
 
+
 mybot .img-profile {
-  width: 75px;
-  border-radius: 7px;
+  width: auto;
+  height: auto;
+  max-width: 58px;
+  max-height: 58px;
+  margin: auto;
 }
 
 mybot .col-hgt {
-  height: 100px;
+  height: auto;
+  width: auto;
+  min-height: 73px;
+  min-width: 73px;
   display: flex;
   align-items: center;
   float: left;
+  background-color: #FF995F;
+  border-radius: 46px;
 }
 
 mybot .chat-txt {
@@ -487,8 +497,8 @@ mybot .bounce3 {
 }
 
 #header {
-  /* background-color: #FF995F; */
-  background-image: linear-gradient(to right,#ff8328, #ea5400 );
+  background-color: #FF995F;
+  /* background-image: linear-gradient(to right,#ff8328, #ea5400 ); */
   color: #fff;
   flex-shrink: 0;
   display:flex;
