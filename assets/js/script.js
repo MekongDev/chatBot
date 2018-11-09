@@ -2,46 +2,73 @@ $(document).ready(function() {
 
 	// Credentials
 	const baseUrl = "https://api.dialogflow.com/v1/";
+	
 	const tokens ={
 		standard: "43495d56f78a40d1b4d78ae90beee206"
 	}
-	let accessToken = tokens[$('script[data-id="bot"]').data().apikey] || '43495d56f78a40d1b4d78ae90beee206';
-	// let accessToken = $('script[data-id="bot"]').data().apikey || '43495d56f78a40d1b4d78ae90beee206'
+	
+	let accessToken = $('script[data-id="bot"]').data().apikey || '43495d56f78a40d1b4d78ae90beee206'
+	// let accessToken = tokens[$('script[data-id="bot"]').data().apikey] || '43495d56f78a40d1b4d78ae90beee206';
 
 	//domain
 	const domain = './assets/' //http://madketing.com.ar/chat/assets/
 
+	//icon color
+	const iconColor = $('script[data-id="bot"]').data().iconcolor
 
 	//---------------------------------- Add dynamic html bot content(Widget style) ----------------------------
 	// You can also add the html content in html page and still it will work!
-	var mybot = '<div class="chatCont" id="chatCont">'+
-								'<div class="bot_profile">'+
-									'<img src="'+domain+'img/logo2.png" class="bot_p_img">'+
-									'<div class="close" style="width: 22px; height: 22px;">'+
-										'<i class="fa fa-times" aria-hidden="true" style="color: #000000;"></i>'+
-									'</div>'+
-								'</div><!--bot_profile end-->'+
-								'<div id="result_div" class="resultDiv">'+'<p class="botResult">Hola, soy Carla! responsable comercial. En que puedo ayudarte?</p><div class="clearfix"></div>'+'</div>'+
-								'<div class="chatForm" id="chat-div">'+
-									'<div class="spinner">'+
-										'<div class="bounce1"></div>'+
-										'<div class="bounce2"></div>'+
-										'<div class="bounce3"></div>'+
-									'</div>'+
-									'<input type="text" id="chat-input" autocomplete="off" placeholder="Escribe tu pregunta.."'+ 'class="form-control bot-txt"/>'+
-									'<button type="submit" id="send-button" class="sendButton"><img src="'+domain+'img/send-button.png"/></button>'+
-								'</div>'+
-							'</div><!--chatCont end-->'+
+	var mybot = '<div class="container">'+
+			'<mybot class="boot">'+
+			'<div class="chatCont" id="chatCont" style="display:none">'+
+				'<div id="header">'+
+					'<div>'+
+						'<p id="headerName">Carla</p>'+
+						'<p id="headerStatus">Online</p>'+
+					'</div>'+
+					'<div id="closeChat">X</div>'+
+				'</div>'+
+				'<div id="result_div" class="resultDiv"><p class="botResult">Hola, soy Carla! responsable comercial. En que puedo ayudarte?</p><div class="clearfix"></div></div>'+
+				'<div class="spinner">'+
+					'<div class="bounce1"></div>'+
+					'<div class="bounce2"></div>'+
+					'<div class="bounce3"></div>'+
+				'</div>'+
+				'<div class="developed-text">Desarrollado por <img src="'+domain+'img/logo-mdk-01.png" class="img-conf-logo" /></div>'+
+				'<div class="chatForm" id="chat-div">'+
+					'<input type="text" id="chat-input" autocomplete="off" placeholder="Escribe tu pregunta.." class="form-control bot-txt"/>'+
+					'<button type="submit" id="send-button" class="sendButton"><img src="'+domain+'img/imagen-enviar.png" class="img-conf"/></button>'+
+				'</div>'+
+			'</div><!--chatCont end-->'+
+				'<div class="pop-up-container">'+
+					'<div class="pop-up-cuerpo">'+
+						'<div class="pop-up-content">'+
+							'<div class="pop-up-content-title">'+
+								'Carla '+
+							'</div>'+
+							'<div class="pop-up-text-container">'+
+								'Hola, soy Carla! responsable comercial. En que puedo ayudarte?'+
+							'</div>'+
+							'<div class="pop-up-text-closer">'+
+								'X'+
+							'</div>'+
+						'</div>'+
+					'</div>'+
+					'<div class="fake-input-container">'+
+						'<input type="text" name="text" class="popup-fake-input" placeholder="Escribe una respuesta...">'+
+					'</div>'+
+				'</div>'+
+				'<div class="profile_div">'+
+					'<div class="row" style="width: 80px;">'+
+						'<div class="col-hgt" style="background-color: '+iconColor+'">'+
+							'<img src="'+domain+'img/chaticon-03.png" class="img-circle img-profile">'+
+						'</div><!--col-hgt end-->'+
+					'</div><!--row end-->'+
+				'</div><!--profile_div end-->'+
+			'</mybot>'+
+		'</div><!--container end-->';
 
-							'<div class="profile_div">'+
-								'<div class="row" style="width: 80px;">'+
-									'<div class="col-hgt">'+
-										'<img src="'+domain+'/img/logo.png" class="img-circle img-profile">'+
-									'</div><!--col-hgt end-->'+
-								'</div><!--row end-->'+
-							'</div><!--profile_div end-->';
-
-	// $("mybot").html(mybot);
+	$("body").html(mybot);
 
 	// ------------------------------------------ Toggle chatbot -----------------------------------------------
 	$('.profile_div').click(openChat);
@@ -52,7 +79,9 @@ $(document).ready(function() {
 
 	$('.fake-input-container').click(openChat);
 
-	$('#closeChat').click(closeChat);
+	$('#closeChat').click(function(){
+		window.history.back()
+	});
 
 	function openChat(){
 		$('.profile_div').toggle();
