@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+	
 	// Credentials
 	const baseUrl = "https://api.dialogflow.com/v1/";
 	
@@ -9,13 +10,13 @@ $(document).ready(function() {
 	
 	let accessToken = $('script[data-id="bot"]').data().apikey || '43495d56f78a40d1b4d78ae90beee206'
 	// let accessToken = tokens[$('script[data-id="bot"]').data().apikey] || '43495d56f78a40d1b4d78ae90beee206';
-
+	
 	//domain
 	const domain = './assets/' //http://madketing.com.ar/chat/assets/
-
+	
 	//icon color
-	const iconColor = $('script[data-id="bot"]').data().iconcolor
-
+	const iconColor = $('script[data-id="bot"]').data().iconcolor || '#FF995F'
+	
 	//---------------------------------- Add dynamic html bot content(Widget style) ----------------------------
 	// You can also add the html content in html page and still it will work!
 	var mybot = '<div class="container">'+
@@ -26,10 +27,10 @@ $(document).ready(function() {
 						'<p id="headerName">Carla</p>'+
 						'<p id="headerStatus">Online</p>'+
 					'</div>'+
-					'<div id="closeChat">X</div>'+
+					'<div id="closeChat"><img class="img-close" src="'+domain+'img/x.png"/></div>'+
 				'</div>'+
-				'<div id="result_div" class="resultDiv"><p class="botResult">Hola, soy Carla! responsable comercial. En que puedo ayudarte?</p><div class="clearfix"></div></div>'+
-				'<div class="spinner">'+
+				'<div id="result_div" class="resultDiv"><p class="botResult" style="background-color: '+iconColor+'">Hola, soy Carla! responsable comercial. En que puedo ayudarte?</p><div class="clearfix"></div></div>'+
+				'<div class="spinner" style="--bordercol:15px solid '+iconColor+';background-color: '+iconColor+'">'+
 					'<div class="bounce1"></div>'+
 					'<div class="bounce2"></div>'+
 					'<div class="bounce3"></div>'+
@@ -50,7 +51,7 @@ $(document).ready(function() {
 								'Hola, soy Carla! responsable comercial. En que puedo ayudarte?'+
 							'</div>'+
 							'<div class="pop-up-text-closer">'+
-								'X'+
+								'<img class="img-close2" src="'+domain+'img/x.png"/>'+
 							'</div>'+
 						'</div>'+
 					'</div>'+
@@ -62,7 +63,8 @@ $(document).ready(function() {
 					'<div class="row" style="width: 80px;">'+
 						'<div class="col-hgt" style="background-color: '+iconColor+'">'+
 							'<img src="'+domain+'img/chaticon-03.png" class="img-circle img-profile">'+
-						'</div><!--col-hgt end-->'+
+						'</div>'+
+						'<div class="unread-msgs">1</div><!--col-hgt end-->'+
 					'</div><!--row end-->'+
 				'</div><!--profile_div end-->'+
 			'</mybot>'+
@@ -98,6 +100,7 @@ $(document).ready(function() {
 		$('.bot_profile').toggle();
 		$('.chatForm').toggle();
 		$('.pop-up-container:visible').hide();
+		$('.unread-msgs:visible').hide();
 	};
 
 	window.onpopstate = function (event) {
@@ -111,6 +114,7 @@ $(document).ready(function() {
 
 	setTimeout(() => {
 		$('.pop-up-container').slideToggle(150);
+		$('.unread-msgs').toggle();
 	}, 2000);
 
 
@@ -240,11 +244,11 @@ $(document).ready(function() {
 		setTimeout(function(){
 			if($.trim(val) == '') {
 				val = 'I couldn\'t get that. Let\' try something else!'
-				var BotResponse = '<div class="scope-bot"><p class="botResult">'+val+'</p></div><div class="clearfix"></div>';
+				var BotResponse = '<div class="scope-bot"><p class="botResult" style="background-color: '+iconColor+'">'+val+'</p></div><div class="clearfix"></div>';
 				$(BotResponse).appendTo('#result_div');	// Suggestions end -----------------------------------------------------------------------------------------
 			} else {
 				val = val.replace(new RegExp('\r?\n','g'), '<br />');
-				var BotResponse = '<div class="scope-bot"><p class="botResult">'+val+'</p></div><div class="clearfix"></div>';
+				var BotResponse = '<div class="scope-bot"><p class="botResult" style="background-color: '+iconColor+'">'+val+'</p></div><div class="clearfix"></div>';
 				$(BotResponse).appendTo('#result_div');
 			}
 			hideSpinner();
