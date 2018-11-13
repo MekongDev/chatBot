@@ -535,6 +535,8 @@ mybot .bounce3 {
 
 #header {
   background-color: #8C8C8C;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   /* background-image: linear-gradient(to right,#ff8328, #ea5400 ); */
   color: #fff;
   flex-shrink: 0;
@@ -576,6 +578,11 @@ padding-bottom: 0.4rem;
     width: 90%;
     margin-bottom: 20px;
   } */
+
+  #header{
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
 
   mybot .chatCont,
   mybot .chatForm {
