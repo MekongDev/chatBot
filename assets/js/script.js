@@ -22,7 +22,7 @@ $(document).ready(function() {
 	var mybot = '<div class="container">'+
 			'<mybot class="boot">'+
 			'<div class="chatCont" id="chatCont" style="display:none">'+
-				'<div id="header">'+
+				'<div id="chatHeader">'+
 					'<div>'+
 						'<p id="headerName">Carla</p>'+
 						'<p id="headerStatus">Online</p>'+

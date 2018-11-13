@@ -404,6 +404,13 @@ mybot .chat-txt {
   border-radius: 50px;
 }
 
+.chatForm > input[type='text']{
+  background-color: white;
+  padding: 6px 12px;
+  margin:0;
+  font-family: 'Open Sans', sans-serif;
+}
+
 /* Spinner start */
 @keyframes wave {
   0% {
@@ -484,7 +491,7 @@ mybot .bounce3 {
   flex-grow: 1;
 }
 
-#header {
+#chatHeader {
   background-color: #8C8C8C;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -495,7 +502,7 @@ mybot .bounce3 {
   align-items: center;
 }
 
-#header p {
+#chatHeader p {
   margin: 0 1rem;
 }
 
@@ -523,7 +530,7 @@ padding-bottom: 0.4rem;
 
 @media screen and (max-width: 500px) {
 
-  #header{
+  #chatHeader{
     border-top-left-radius: 0;
     border-top-right-radius: 0;
   }
