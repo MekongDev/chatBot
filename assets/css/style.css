@@ -7,7 +7,6 @@ body {
   font-size: 0.85rem;
   line-height: 1.42857143;
   color: #333;
-  /* background-color: #000000; */
 }
 
 * {
@@ -104,16 +103,11 @@ a:focus {
 /* Demo end */
 
 .boot {
-  /* position: absolute; */
   z-index: 10000 !important;
 }
 
 .sendButton {
   background-color: #1592ea !important;
-  /* position: relative; */
-  /* display: inline-flex; */
-  /* bottom: 4em; */
-  /* left: 25.25em; */
   border: none;
   cursor: pointer;
   border-radius: 50%;
@@ -165,17 +159,14 @@ mybot .chatCont {
   position: fixed;
   width: 320px;
   height: 70% !important;
-  /* border: 1px solid #dcdcdc; */
   bottom: 0;
   right: 0;
-  /* background: #efe7dd url("http://madketing.com.ar/chat/assets/img/bg.jpg"); */
   border-top-left-radius: 3px;
   background-color: #EBEBEB;
   z-index: 10000;
   display: flex;
   flex-direction: column;
   justify-content: space-between; 
-  /* display:none; */
 }
 
 mybot .close {
@@ -223,13 +214,6 @@ mybot .chatForm {
   border-top: 1px solid #dcdcdc;
   background-color: white;
   flex-shrink: 0;
-  /* position: absolute; */
-  /* height: 15%; */
-  /* bottom: -65px; */
-	/* right: 0; */
-	/* margin-bottom: 0;
-	width: 320px; */
-  /* display: none; */
 }
 
 mybot .bot-txt,
@@ -243,7 +227,6 @@ mybot .bot-txt:focus {
 
 mybot .resultDiv .botResult {
   background-color: #FF995F;
-  /* background-image: linear-gradient(to right,#ff8328, #ea5400 ); */
   color: #ffffff;
   border-radius: 30px;
   padding: 12px;
@@ -257,18 +240,6 @@ mybot .resultDiv .botResult {
   display: inline-block;
   max-width: 100%;
 }
-
-/* mybot .resultDiv .botResult:before {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-top: 0px solid rgba(0, 0, 0, 0);
-  border-bottom: 15px solid rgba(0, 0, 0, 0);
-  border-right: 15px solid #fff;
-  left: -15px;
-  margin-top: -12px;
-} */
 
 mybot .resultDiv .scope-user {
   text-align: right;
@@ -291,18 +262,6 @@ mybot .resultDiv .userEnteredText {
   display: inline-block;
   max-width: 100%;
 }
-
-/* mybot .resultDiv .userEnteredText:before {
-  content: "";
-  width: 0;
-  height: 0;
-  border-top: 0px solid rgba(0, 0, 0, 0);
-  border-bottom: 15px solid rgba(0, 0, 0, 0);
-  border-left: 15px solid #FF995F;
-  position: absolute;
-  right: -15px;
-  margin-top: -12px;
-} */
 
 mybot .pop-up-container {
   display: none;
@@ -345,7 +304,6 @@ mybot .pop-up-content-title{
   overflow: hidden;
   padding: 3px 0 7px;
   text-align: left;
-  /* white-space: pre-line; */
   max-width: 84%;
 }
 
@@ -422,7 +380,6 @@ mybot .col-hgt {
 }
 
 mybot .unread-msgs {
-  /* background-size: 18px 18px; */
   display: none;
   background-color: red;
   cursor: pointer;
@@ -465,7 +422,6 @@ mybot .chat-txt {
 }
 
 mybot .spinner {
-  /* background-image: linear-gradient(to right,#ff8328, #ea5400 ); */
   background-color: #FF995F;
   width: 70px;
   height: 35px;
@@ -503,14 +459,12 @@ mybot .spinner > div {
 mybot .bounce1 {
   margin-right:3px;
   background:#303131;
-  /* animation: wave 0.5s linear infinite; */
   animation: wave 0.7s cubic-bezier(0.6, -0.28, 0.74, 0.05) infinite;
 }
 
 mybot .bounce2 {
   margin-right:3px;
   background:#303131;
-  /* animation: wave 0.5s linear infinite; */
   animation: wave 0.7s cubic-bezier(0.6, -0.28, 0.74, 0.05) infinite;
   animation-delay: 0.1s;
 }
@@ -518,7 +472,6 @@ mybot .bounce2 {
 mybot .bounce3 {
   margin-right:3px;
   background:#303131;
-  /* animation: wave 0.5s linear infinite; */
   animation: wave 0.7s cubic-bezier(0.6, -0.28, 0.74, 0.05) infinite;
   animation-delay: 0.2s;
 }
@@ -529,15 +482,12 @@ mybot .bounce3 {
   padding: 35px 20px 30px 20px;
   overflow-y: auto;
   flex-grow: 1;
-  /* border-top: 4px solid #878787; */
-  /* box-shadow: 2px 2px 20px 4px; */
 }
 
 #header {
   background-color: #8C8C8C;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  /* background-image: linear-gradient(to right,#ff8328, #ea5400 ); */
   color: #fff;
   flex-shrink: 0;
   display:flex;
@@ -572,12 +522,6 @@ padding-bottom: 0.4rem;
 
 
 @media screen and (max-width: 500px) {
-  /* mybot .resultDiv .userEnteredText,
-  mybot .resultDiv .botResult,
-  mybot .suggestion {
-    width: 90%;
-    margin-bottom: 20px;
-  } */
 
   #header{
     border-top-left-radius: 0;
@@ -597,8 +541,9 @@ padding-bottom: 0.4rem;
     height: 100% !important;
   }
 }
-/* MyBot end */
 
 i {
   color: black;
 }
+
+/* MyBot end */

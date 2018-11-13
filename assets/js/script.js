@@ -146,7 +146,6 @@ $(document).ready(function() {
 			var retrievedSession = sessionStorage.getItem('session');
 		}
 		return retrievedSession;
-		// console.log('session: ', retrievedSession);
 	}
 
 	// Call Session init
