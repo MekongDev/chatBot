@@ -154,7 +154,7 @@ $(document).ready(function() {
 
 
 	// on input/text enter--------------------------------------------------------------------------------------
-	$('#chat-input').on('keyup keypress', function(e) {
+	$('#chat-input').on('keypress', function(e) {
 		var keyCode = e.keyCode || e.which;
 		var text = $("#chat-input").val();
 		if (keyCode === 13) {
@@ -162,10 +162,10 @@ $(document).ready(function() {
 				e.preventDefault();
 				return false;
 			} else {
-				$("#chat-input").blur();
+				e.preventDefault();
+				document.getElementById('chat-input').focus();
 				setUserResponse(text);
 				send(text);
-				e.preventDefault();
 				return false;
 			}
 		}
@@ -177,10 +177,10 @@ $(document).ready(function() {
 			e.preventDefault();
 			return false;
 		} else {
-			$("#chat-input").blur();
+			e.preventDefault();
+			document.getElementById('chat-input').focus();
 			setUserResponse(text);
 			send(text);
-			e.preventDefault();
 			return false;
 		}
 	});
@@ -252,8 +252,6 @@ $(document).ready(function() {
 				$(BotResponse).appendTo('#result_div');
 			}
 			hideSpinner();
-			scrollToBottomOfResults();
-			if (window.innerWidth>600) document.getElementById('chat-input').focus();
 		}, 500);
 	}
 
@@ -263,7 +261,6 @@ $(document).ready(function() {
 		var UserResponse = '<div class="scope-user"><p class="userEnteredText">'+val+'</p></div><div class="clearfix"></div>';
 		$(UserResponse).appendTo('#result_div');
 		$("#chat-input").val('');
-		scrollToBottomOfResults();
 		$(".spinner").appendTo("#result_div");
 		showSpinner();
 		$('.suggestion').remove();
@@ -271,10 +268,10 @@ $(document).ready(function() {
 
 
 	//---------------------------------- Scroll to the bottom of the results div -------------------------------
-	function scrollToBottomOfResults() {
-		var terminalResultsDiv = document.getElementById('result_div');
-		terminalResultsDiv.scrollTop = terminalResultsDiv.scrollHeight;
-	}
+	var someElement = document.getElementById('result_div');
+	var observer = new MutationObserver(() => someElement.scrollTop = someElement.scrollHeight);
+	var config = {childList: true};
+	observer.observe(someElement, config);
 
 
 	//---------------------------------------- Ascii Spinner ---------------------------------------------------
