@@ -161,7 +161,8 @@ mybot .chatCont {
   height: 70% !important;
   bottom: 0;
   right: 0;
-  border-top-left-radius: 3px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   background-color: #EBEBEB;
   z-index: 10000;
   display: flex;
@@ -184,6 +185,7 @@ mybot .img-close {
   width: auto;
   max-height: 16px;
   max-width: 16px;
+  vertical-align: middle;
 }
 
 mybot .img-close2 {
@@ -275,6 +277,7 @@ mybot .pop-up-container {
   padding: 7px 0 10px 5px;
   animation: fadein .3s;
   position: fixed;
+   z-index: 9999;
 }
 
 mybot .pop-up-cuerpo{
@@ -355,6 +358,7 @@ mybot .profile_div {
   width: 82px;
   cursor: pointer;
   height: 86px;
+  z-index: 10000;
 }
 
 
@@ -364,6 +368,7 @@ mybot .img-profile {
   max-width: 44px;
   max-height: 44px;
   margin: auto;
+  vertical-align: middle;
 }
 
 mybot .col-hgt {
@@ -528,9 +533,10 @@ padding-bottom: 0.4rem;
 }
 
 
+
 @media screen and (max-width: 500px) {
 
-  #chatHeader{
+  #chatHeader, .chatCont{
     border-top-left-radius: 0;
     border-top-right-radius: 0;
   }
@@ -542,6 +548,7 @@ padding-bottom: 0.4rem;
 
   mybot .img-conf {
     padding-right: 2px;
+    vertical-align: middle;
   }
   
   mybot .chatCont {

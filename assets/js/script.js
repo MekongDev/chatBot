@@ -12,7 +12,7 @@ $(document).ready(function() {
 	// let accessToken = tokens[$('script[data-id="bot"]').data().apikey] || '43495d56f78a40d1b4d78ae90beee206';
 	
 	//domain
-	const domain = './assets/' //http://madketing.com.ar/chat/assets/
+	const domain = 'http://madketing.com.ar/chatbot_madketing/assets/' //http://madketing.com.ar/chat/assets/
 	
 	//icon color
 	const iconColor = $('script[data-id="bot"]').data().iconcolor || '#FF995F'
@@ -60,17 +60,15 @@ $(document).ready(function() {
 					'</div>'+
 				'</div>'+
 				'<div class="profile_div">'+
-					'<div class="row" style="width: 80px;">'+
 						'<div class="col-hgt" style="background-color: '+iconColor+'">'+
-							'<img src="'+domain+'img/chaticon-03.png" class="img-circle img-profile">'+
+							'<img src="'+domain+'img/chaticon-03.png" class="img-profile">'+
 						'</div>'+
 						'<div class="unread-msgs">1</div><!--col-hgt end-->'+
-					'</div><!--row end-->'+
 				'</div><!--profile_div end-->'+
 			'</mybot>'+
 		'</div><!--container end-->';
 
-	$("body").html(mybot);
+	$(mybot).appendTo('body');
 
 	// ------------------------------------------ Toggle chatbot -----------------------------------------------
 	$('.profile_div').click(openChat);
